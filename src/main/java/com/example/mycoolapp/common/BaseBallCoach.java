@@ -3,11 +3,10 @@ package com.example.mycoolapp.common;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CricketCoach implements Coach{
-
+public class BaseBallCoach implements Coach {
     @Override
     public String getDailyWorkout() {
-        return "Practice fast bowling for 6 minutes. Practice batting for 10 minutes. Practice fielding for 5 minutes.";
+        return "Spend 30 minutes on batting practice. Spend 30 minutes on fielding practice. Spend 30 minutes on running practice.";
     }
 
     @Override
