@@ -12,21 +12,23 @@ public class DemoController {
     private final Coach myCoach;
     private final Coach anotherCoach;
 
-    //private final Coach swimCoach;
+    private final Coach swimCoach;
 
     @Autowired
     DemoController(@Qualifier(value = "cricketCoach") Coach coach,
-                   @Qualifier(value = "tennisCoach") Coach baseballCoach){
+                   @Qualifier(value = "tennisCoach") Coach baseballCoach,
+                   //@Qualifier(value = "aquaticsCoach") Coach swimCoach -> custom bean name
+                   @Qualifier(value = "swimCoach") Coach swimCoach){
         // System.out.println("In DemoController constructor: " + getClass().getSimpleName());
         this.myCoach = coach;
         this.anotherCoach = baseballCoach;
-       // this.swimCoach = swimCoach;
+        this.swimCoach = swimCoach;
     }
 
 
     @GetMapping("/dailyworkout")
     public String getDailyWorkout() {
-        return myCoach.getDailyWorkout();
+        return swimCoach.getDailyWorkout();
     }
 
     @GetMapping("/check")
