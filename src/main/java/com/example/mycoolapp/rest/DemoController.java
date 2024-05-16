@@ -12,12 +12,15 @@ public class DemoController {
     private final Coach myCoach;
     private final Coach anotherCoach;
 
+    //private final Coach swimCoach;
+
     @Autowired
-    DemoController(@Qualifier(value = "tennisCoach") Coach coach,
+    DemoController(@Qualifier(value = "cricketCoach") Coach coach,
                    @Qualifier(value = "tennisCoach") Coach baseballCoach){
-        System.out.println("In DemoController constructor: " + getClass().getSimpleName());
+        // System.out.println("In DemoController constructor: " + getClass().getSimpleName());
         this.myCoach = coach;
         this.anotherCoach = baseballCoach;
+       // this.swimCoach = swimCoach;
     }
 
 
