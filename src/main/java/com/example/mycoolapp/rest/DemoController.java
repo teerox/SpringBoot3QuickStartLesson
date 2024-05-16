@@ -12,6 +12,7 @@ public class DemoController {
 
     @Autowired
     DemoController(Coach coach) {
+        System.out.println("In DemoController constructor: " + getClass().getSimpleName());
         this.coach = coach;
     }
 

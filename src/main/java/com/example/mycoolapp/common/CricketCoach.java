@@ -6,8 +6,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Primary
-@Lazy
 public class CricketCoach implements Coach{
+
+    public CricketCoach() {
+        System.out.println("In CricketCoach constructor: " + getClass().getSimpleName());
+    }
 
     @Override
     public String getDailyWorkout() {
