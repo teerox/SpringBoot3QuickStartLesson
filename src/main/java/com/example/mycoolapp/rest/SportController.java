@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class DemoController {
+public class SportController {
 
     private final Coach myCoach;
     private final Coach anotherCoach;
@@ -15,10 +15,10 @@ public class DemoController {
     private final Coach swimCoach;
 
     @Autowired
-    DemoController(@Qualifier(value = "cricketCoach") Coach coach,
-                   @Qualifier(value = "tennisCoach") Coach baseballCoach,
-                   //@Qualifier(value = "aquaticsCoach") Coach swimCoach -> custom bean name
-                   @Qualifier(value = "swimCoach") Coach swimCoach){
+    SportController(@Qualifier(value = "cricketCoach") Coach coach,
+                    @Qualifier(value = "tennisCoach") Coach baseballCoach,
+                    //@Qualifier(value = "aquaticsCoach") Coach swimCoach -> custom bean name
+                    @Qualifier(value = "swimCoach") Coach swimCoach){
         // System.out.println("In DemoController constructor: " + getClass().getSimpleName());
         this.myCoach = coach;
         this.anotherCoach = baseballCoach;
